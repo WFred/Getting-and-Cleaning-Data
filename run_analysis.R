@@ -25,12 +25,13 @@ Activity <- data.frame("Activity" = label.names[,2][Activity[,1]])
 # Add column names to supertable
 colnames (supertable) <- (features[,2])
 
-# bind Activitys and Subject_Id to Supertable
+# bind Activitys and Subject_Id to Supertable to created Merged Data set
 
 Merged  <- cbind (Subject_Id, Activity, supertable)
 
+# Select only mean and standard deviation containing columns
 ## to use select function first must coerce columns into valid R names. 
-### This the removal of () and - symbols from column names
+### This is the removal of () and - symbols from column names
 
 valid_column_names <- make.names(names=names(Merged), unique=TRUE, allow_ = TRUE)
 names(Merged) <- valid_column_names
@@ -48,7 +49,7 @@ names(Data)<-gsub("Mag", "Magnitude", names(Data))
 names(Data)<-gsub("BodyBody", "Body", names(Data))
 
 ##Write tidy data set,
-###grouping by subject then activity giving averages for varible
+###grouping by subject then activity giving averages for each varible
 ### Orders data by subject 
 
 Tidydata <- Data %>%
