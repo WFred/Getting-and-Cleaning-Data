@@ -17,8 +17,10 @@ This script does the following
 
 To run the script requires the unzipping of the data and the working directory set in R to the folder location. 
 To view the output independent file use the following code.
-Tidydata <- read.table (“Tidydata.txt”)
-View (Tidydata) 
+
+```Tidydata <- read.table (“Tidydata.txt”)```
+
+```View (Tidydata)```
 
 For more information please refer to the Codebook 
 
