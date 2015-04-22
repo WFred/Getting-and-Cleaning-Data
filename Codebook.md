@@ -48,5 +48,5 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 All other variables were discarded for this assignment. 
 
 These names are structured in the format of:
-Time body Accelerometer Mean – X  =   timeBodyAccelerometer.mean...X
-Time body Accelerometer Std – Y      =   timeBodyAccelerometer.std...Y
+- Time body Accelerometer Mean – X  =   timeBodyAccelerometer.mean...X
+- Time body Accelerometer Std – Y      =   timeBodyAccelerometer.std...Y
