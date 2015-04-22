@@ -1,3 +1,4 @@
+#Requires package dplyr to be installed to run script
 library (dplyr)
 
 #read in data for test + train and merge
@@ -10,7 +11,7 @@ Subject_Id <-  rbind (read.table ("test/subject_test.txt"),
                       read.table ("train/subject_train.txt"))
 colnames(Subject_Id) <- "Subject_Id"
 
-#read in real column names
+#read in real column names that are the features 
 features <- read.table("features.txt")
 
 #read in activity names in numeric form
@@ -25,7 +26,7 @@ Activity <- data.frame("Activity" = label.names[,2][Activity[,1]])
 # Add column names to supertable
 colnames (supertable) <- (features[,2])
 
-# bind Activitys and Subject_Id to Supertable to created Merged Data set
+# bind descriptive Activitys and Subject_Id to Supertable to created Merged Data set
 
 Merged  <- cbind (Subject_Id, Activity, supertable)
 
@@ -48,8 +49,8 @@ names(Data)<-gsub("Gyro", "Gyroscope", names(Data))
 names(Data)<-gsub("Mag", "Magnitude", names(Data))
 names(Data)<-gsub("BodyBody", "Body", names(Data))
 
-##Write tidy data set,
-###grouping by subject then activity giving averages for each varible
+#Write tidy data set,
+## grouping by subject then activity giving averages for each varible
 ### Orders data by subject 
 
 Tidydata <- Data %>%
